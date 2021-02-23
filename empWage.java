@@ -4,13 +4,17 @@ public class empWage {
 	public static final int IS_PART_TIME = 2;
 	public static final int EMP_WAGE_PER_HOUR = 20;
 	public static final int MAX_WORKING_DAYS = 20;
+	public static final int MAX_WORKING_HOURS = 50;
 
 	static int totalEmpWage;
 
 	public static int calculate_wage() {
+		int  totalWorkingDays = 0;
+		int totalEmpHours = 0;
 
-		for (int day = 1; day <= MAX_WORKING_DAYS; day++){
+		while( totalWorkingDays != MAX_WORKING_DAYS && totalEmpHours <= MAX_WORKING_HOURS) {
 			int empHours, empWage;
+			totalWorkingDays++;
 
 			int empCheck =(int) Math.floor(Math.random() * 10) % 3;
 				switch(empCheck) {
@@ -24,8 +28,9 @@ public class empWage {
 						empHours = 0;
 				}
 			empWage = empHours * EMP_WAGE_PER_HOUR;
+			System.out.println("Day " + totalWorkingDays + " Wage : " + empWage);
 			totalEmpWage += empWage;
-			System.out.println("Day " + day + " Wage : " + empWage);
+			totalEmpHours += empHours;
 		}
 		return totalEmpWage;
 	}
