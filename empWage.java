@@ -8,16 +8,15 @@ public class empWage {
 		int empHours, empWage;
 
 		int empCheck =(int) Math.floor(Math.random() * 10) % 3;
-		switch (empCheck) {
-			case IS_FULL_TIME :
+		if (empCheck == IS_FULL_TIME) {
 				System.out.println("Employee is Full Time");
 				empHours = 8;
-				break;
-			case IS_PART_TIME :
+		}
+		else if (empCheck == IS_PART_TIME) {
 				System.out.println("Employee is Part Time");
 				empHours = 4;
-				break;
-			default :
+		}
+		else {
 				System.out.println("Employee is Absent");
 				empHours = 0;
 		}
