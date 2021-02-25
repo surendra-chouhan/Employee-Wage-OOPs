@@ -30,7 +30,7 @@ public class empWage {
 		int empHours = 0;
 		int empWage = 0;
 
-		while( totalWorkingDays != maxWorkingDays && totalEmpHours <= maxWorkingHours) {
+		while( totalWorkingDays < maxWorkingDays && totalEmpHours <= maxWorkingHours) {
 		int empCheck =(int) Math.floor(Math.random() * 10) % 3;
 
                 switch(empCheck) {
@@ -51,7 +51,6 @@ public class empWage {
 			totalEmpWage += empWage;
 			totalEmpHours += empHours;
 		}
-		System.out.println("Total salary of an Employee Working in " + companyName + " is : " + totalEmpWage);
 	}
 
 	public static void main(String[] args) {
@@ -63,11 +62,15 @@ public class empWage {
 
 		System.out.println("Dmart Employee : ");
 		Dmart.calculate_wage();
+		System.out.println(Dmart);
 
 		System.out.println("Reliance Employee : ");
 		Reliance.calculate_wage();
+		System.out.println(Reliance);
 
 		System.out.println("Big Bazaar Employee : ");
 		BigBazaar.calculate_wage();
+		System.out.println(BigBazaar);
+
 	}
 }
