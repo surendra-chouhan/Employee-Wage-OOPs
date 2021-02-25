@@ -83,8 +83,13 @@ public class empWage implements IComputeEmpWage{
 			empWage = empHours * companyEmpWage.empWagePerHour;
 			System.out.println("Day " + totalWorkingDays + " Wage : " + empWage);
 			totalEmpHours += empHours;
+			System.out.println("Daily Wage of an Employee is : " + empWage);
 		}
 		return totalEmpHours * companyEmpWage.empWagePerHour;
+	}
+
+	public int getTotalWage(String companyName) {
+		return companyToEmpWageMap.get(companyName).totalEmpWage;
 	}
 
 	public static void main(String[] args) {
@@ -97,5 +102,11 @@ public class empWage implements IComputeEmpWage{
 		eWage.addCompanyWage("Big Bazaar", 25, 18, 45);
 
 		eWage.computeWage();
+	
+		System.out.println("Total Wage for Dmart : "+eWage.getTotalWage("Dmart"));
+		System.out.println("Total Wage for Reliance Store : "+eWage.getTotalWage("Reliance Store"));
+		System.out.println("Total Wage for Big Bazaar : "+eWage.getTotalWage("Big Bazaar"));		
+
+
 	}
 }
